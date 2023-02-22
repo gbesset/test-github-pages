@@ -54,9 +54,9 @@ jobs:
       - name: Compile Contracts
         run: truffle compile
       - name: Migrate Contracts
-        run: truffle migrate --reset --network ganache
+        run: truffle migrate --reset
       - name: Run Truffle tests
-        run: truffle test --network ganache
+        run: truffle test
       #- run: npm run coverage
       #- uses: codecov/codecov-action@v3
 #- name: Coverage
