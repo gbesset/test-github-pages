@@ -24,7 +24,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
- run_test_job:
+
+  run_test_job:
     runs-on: ubuntu-latest
     name: Run sample solidity tests
     steps:
@@ -35,13 +36,18 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: "14.x"
+      - name: Install dependencies
+        run: npm install
       - name: Install Truffle
         run: npm install -g truffle
       - name: Run Truffle tests
         run: truffle test
       #- run: npm run coverage
       #- uses: codecov/codecov-action@v3
-
-
+#- name: Coverage
+##        uses: codecov/codecov-action@v1
+#       with:
+#         fail_ci_if_error: true
+#         token: ${{ secrets.CODECOV_TOKEN }}
 # https://github.com/OpenZeppelin/defender-templates/blob/main/.github/workflows/ci.yml
