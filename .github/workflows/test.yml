@@ -50,4 +50,5 @@ jobs:
 #       with:
 #         fail_ci_if_error: true
 #         token: ${{ secrets.CODECOV_TOKEN }}
+
 # https://github.com/OpenZeppelin/defender-templates/blob/main/.github/workflows/ci.yml
